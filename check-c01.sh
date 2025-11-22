@@ -25,4 +25,4 @@ else
 	echo 'Inorrect!'
 fi
 
-# rm test.c test-out prog.bin prog-out
+rm test.c test-out prog.bin prog-out
