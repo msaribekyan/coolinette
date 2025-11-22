@@ -11,7 +11,7 @@ ex=$(printf "ex%02d" "$n")
 echo -n "Now checking "
 echo $ex
 
-dirname="/home/mher/Downloads/coolinette/C01/"
+dirname="$COOLINETTE_DIR"
 test_c="${dirname}${ex}.c"
 test_o="${dirname}${ex}-out"
 cp $test_c ./test.c
