@@ -59,6 +59,7 @@ test() {
 	else
 		echo -e "${YELLOW}${ex}${NC} ${RED}Incorrect${NC}"
 	fi
+	rm -rf $temp_dir
 }
 
 if [ -z "$1" ]; then
