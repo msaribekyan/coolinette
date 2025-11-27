@@ -1,5 +1,10 @@
 #!/bin/bash
 
+GREEN="\033[1;32m"
+RED="\033[1;31m"
+CYAN="\033[1;36m"
+NC="\033[0m"
+
 if [ -z "$1" ]; then
 	n=0
 else

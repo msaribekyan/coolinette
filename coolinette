@@ -3,6 +3,7 @@ version=0.0.2
 
 GREEN="\033[1;32m"
 RED="\033[1;31m"
+CYAN="\033[1;36m"
 NC="\033[0m"
 echo -e "${GREEN}Coolinette${NC} v${version}"
 
@@ -35,5 +36,11 @@ else
 	proj=$1
 fi
 
-echo -e "Selected project ${proj}"
-bash "${HOME}/coolinette/scripts/${proj}.sh"
+echo -e "Selected project ${CYAN}${proj}${NC}"
+# Check if second (exercise) argument is supplied
+if [ -z "$2" ]; then
+
+	bash "${HOME}/coolinette/scripts/${proj}.sh"
+else
+	bash "${HOME}/coolinette/scripts/${proj}.sh" "${2}"
+fi
