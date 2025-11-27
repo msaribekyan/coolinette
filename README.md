@@ -1,6 +1,6 @@
 # Coolinette
 
-## 42 code checker, which is cooler than Moulinette
+## 42 Piscine code evaluator, which is cooler than Moulinette
 
 Supports C00 and C01, for now.
 
