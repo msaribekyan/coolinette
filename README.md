@@ -12,5 +12,5 @@ alias coolinette="${HOME}/coolinette/coolinette"
 
 ## Usage
 ```
-$> coolinette
+$ coolinette
 ```
