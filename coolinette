@@ -1,0 +1,39 @@
+#!/bin/bash
+version=0.0.2
+
+GREEN="\033[1;32m"
+RED="\033[1;31m"
+NC="\033[0m"
+echo -e "${GREEN}Coolinette${NC} v${version}"
+
+# Check if first (project) argument is supplied
+if [ -z "$1" ]; then
+	echo -e "Auto-detecting project..."
+	dn="${PWD##*/}"
+	case "$dn" in
+		*"Shell00"* | *"shell00"* | *"Shell 00"* | *"shell 00"*)
+			proj="Shell00"	
+			;;
+		*"Shell01"* | *"shell01"* | *"Shell 01"* | *"shell 01"*)
+			proj="Shell01"	
+			;;
+		*"C00"* | *"c00"* | *"C 00"* | *"c 00"*)
+			proj="C00"	
+			;;
+		*"C01"* | *"c01"* | *"C 01"* | *"c 01"*)
+			proj="C01"	
+			;;
+		*"C02"* | *"c02"* | *"C 02"* | *"c 02"*)
+			proj="C02"	
+			;;
+		*)
+			echo -e "${RED}Cannot detect project:${NC} Exiting..."
+			exit 1
+			;;	
+	esac
+else
+	proj=$1
+fi
+
+echo -e "Selected project ${proj}"
+bash "${HOME}/coolinette/scripts/${proj}.sh"
