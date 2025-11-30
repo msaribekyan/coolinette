@@ -1,18 +1,66 @@
+#include <stdio.h>
+#include <stdlib.h>
+#include <string.h>
+
+#define RED "\033[1;31m"
+#define CYAN "\033[1;36m"
+#define YELLOW "\033[1;33m"
+#define DEFAULT "\033[0m"
+
 int	ft_str_is_alpha(char *str);
 
-#include <stdio.h>
+typedef struct	s_test
+{
+	char		*desc;
+	char		*input;
+	int		expected;
+}	t_test;
 
 int main()
 {
-	char str1[20] = "HelloWorld";
-	char str2[20] = "Hell0 World!";
-	char str3[20] = "hello\tworld";
-	char str4[20] = "1234567890";
-	char str5[20] = "\n";
+	int	i;
+	int	count;
 
-	printf("%d\n", ft_str_is_alpha(str1));
-	printf("%d\n", ft_str_is_alpha(str2));
-	printf("%d\n", ft_str_is_alpha(str3));
-	printf("%d\n", ft_str_is_alpha(str4));
-	printf("%d\n", ft_str_is_alpha(str5));
+	t_test tests[] = {
+		{
+			.desc = "ft_str_is_alpha(\"\")",
+			.input = "",
+			.expected = 1
+		},
+		{
+			.desc = "ft_str_is_alpha(\"HelloWorld\")",
+			.input = "HelloWorld",
+			.expected = 1
+		},
+		{
+			.desc = "ft_str_is_alpha(\"He`llo\\Wo_rld\")",
+			.input = "Hello\\Wo_rld",
+			.expected = 0
+		},
+		{
+			.desc = "ft_str_is_alpha(\"0123456789\")",
+			.input = "0123456789",
+			.expected = 0
+		},
+		{
+			.desc = "ft_str_is_alpha(\"HelloWorld\\n\")",
+			.input = "HelloWorld\n",
+			.expected = 0
+		},
+	};
+	count = sizeof(tests) / sizeof(t_test);
+	i = 0;
+	while (i < count)
+	{
+		int output = ft_str_is_alpha(tests[i].input);
+		if (output != tests[i].expected)
+		{
+			printf(RED "TEST FAILED" DEFAULT " %s\n", tests[i].desc);
+			printf(CYAN "Expected "YELLOW"%d"DEFAULT, tests[i].expected);
+			printf(CYAN" got "YELLOW"%d\n"DEFAULT, output);
+			return (-1);
+		}
+		i++;
+	}
+	return (0);	
 }

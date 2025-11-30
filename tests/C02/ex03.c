@@ -1,18 +1,66 @@
+#include <stdio.h>
+#include <stdlib.h>
+#include <string.h>
+
+#define RED "\033[1;31m"
+#define CYAN "\033[1;36m"
+#define YELLOW "\033[1;33m"
+#define DEFAULT "\033[0m"
+
 int	ft_str_is_numeric(char *str);
 
-#include <stdio.h>
+typedef struct	s_test
+{
+	char		*desc;
+	char		*input;
+	int		expected;
+}	t_test;
 
 int main()
 {
-	char str1[20] = "123456789";
-	char str2[20] = "";
-	char str3[20] = "hello\tworld";
-	char str4[20] = "Hjo20Avjka3jiiAS";
-	char str5[20] = "0";
+	int	i;
+	int	count;
 
-	printf("%d\n", ft_str_is_numeric(str1));
-	printf("%d\n", ft_str_is_numeric(str2));
-	printf("%d\n", ft_str_is_numeric(str3));
-	printf("%d\n", ft_str_is_numeric(str4));
-	printf("%d\n", ft_str_is_numeric(str5));
+	t_test tests[] = {
+		{
+			.desc = "ft_str_is_numeric(\"\")",
+			.input = "",
+			.expected = 1
+		},
+		{
+			.desc = "ft_str_is_numeric(\"0123456789\")",
+			.input = "0123456789",
+			.expected = 1
+		},
+		{
+			.desc = "ft_str_is_numeric(\"-12:<=?\")",
+			.input = "-12:<=?",
+			.expected = 0
+		},
+		{
+			.desc = "ft_str_is_numeric(\"helloworld\")",
+			.input = "helloworld",
+			.expected = 0
+		},
+		{
+			.desc = "ft_str_is_numeric(\"1234\\n\")",
+			.input = "1234\n",
+			.expected = 0
+		},
+	};
+	count = sizeof(tests) / sizeof(t_test);
+	i = 0;
+	while (i < count)
+	{
+		int output = ft_str_is_numeric(tests[i].input);
+		if (output != tests[i].expected)
+		{
+			printf(RED "TEST FAILED" DEFAULT " %s\n", tests[i].desc);
+			printf(CYAN "Expected "YELLOW"%d"DEFAULT, tests[i].expected);
+			printf(CYAN" got "YELLOW"%d\n"DEFAULT, output);
+			return (-1);
+		}
+		i++;
+	}
+	return (0);	
 }

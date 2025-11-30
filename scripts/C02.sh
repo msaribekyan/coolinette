@@ -55,9 +55,10 @@ test() {
 			;;
 	esac
 	$CC "${HOME}/coolinette/tests/C02/${ex}.c" "${dir_path}/${file}" -o "${temp_dir}/prog.bin"
-	"${temp_dir}/prog.bin" > "${temp_dir}/prog-out"
-	
-	if cmp -s "${temp_dir}/prog-out" "${HOME}/coolinette/tests/C02/${ex}-out"; then
+	"${temp_dir}/prog.bin"
+	#echo -e "return $?"
+	#"${temp_dir}/prog.bin" > "${temp_dir}/prog-out"
+	if [ "$?" == "0" ]; then
 		echo -e "${YELLOW}${ex}${NC} ${GREEN}Correct${NC}"
 	else
 		echo -e "${YELLOW}${ex}${NC} ${RED}Incorrect${NC}"
