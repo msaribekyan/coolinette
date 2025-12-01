@@ -9,11 +9,16 @@ Clone the github repository to your home directory with the name "coolinette".
 ```
 git clone https://github.com/msaribekyan/coolinette.git ~/coolinette
 ```
-Add the following alias to your bashrc/zshrc file:
-```
-alias coolinette="${HOME}/coolinette/coolinette"
-```
+Add the alias to your bashrc or zshrc.
 
+### For bash
+```
+echo "alias coolinette='${HOME}/coolinette/coolinette'" >> ~/.bashrc && source ~/.bashrc
+```
+### For zsh
+```
+echo "alias coolinette='${HOME}/coolinette/coolinette'" >> ~/.zshrc && source ~/.zshrc
+```
 ## Usage
 Coolinette automatically detects project by directory name. Navigate into the project directory, and run:
 ```
