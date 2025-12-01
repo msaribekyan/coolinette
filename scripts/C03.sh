@@ -20,41 +20,31 @@ test() {
 	temp_dir=$(mktemp -d)
 	case "$ex" in
 		"ex00")
-			file="ft_ft.c"
+			file="ft_strcmp.c"
 			;;
 		"ex01")
-			file="ft_ultimate_ft.c"
+			file="ft_strncmp.c"
 			;;
 		"ex02")
-			file="ft_swap.c"
+			file="ft_strcat.c"
 			;;
 		"ex03")
-			file="ft_div_mod.c"
+			file="ft_strncat.c"
 			;;
 		"ex04")
-			file="ft_ultimate_div_mod.c"
+			file="ft_strstr.c"
 			;;
 		"ex05")
-			file="ft_putstr.c"
-			;;
-		"ex06")
-			file="ft_strlen.c"
-			;;
-		"ex07")
-			file="ft_rev_int_tab.c"
-			;;
-		"ex08")
-			file="ft_sort_int_tab.c"
+			file="ft_strlcat.c"
 			;;
 		*)
 			echo -e "${RED}Invalid exercise${NC}: Exiting..."
 			exit 1
 			;;
 	esac
-	$CC "${HOME}/coolinette/tests/C01/${ex}.c" "${dir_path}/${file}" -o "${temp_dir}/prog.bin"
-	"${temp_dir}/prog.bin" > "${temp_dir}/prog-out"
-	
-	if cmp -s "${temp_dir}/prog-out" "${HOME}/coolinette/tests/C01/${ex}-out"; then
+	$CC "${HOME}/coolinette/tests/C03/${ex}.c" "${dir_path}/${file}" -o "${temp_dir}/prog.bin"
+	"${temp_dir}/prog.bin"
+	if [ "$?" == "0" ]; then
 		echo -e "${YELLOW}${ex}${NC} ${GREEN}Correct${NC}"
 	else
 		echo -e "${YELLOW}${ex}${NC} ${RED}Incorrect${NC}"
@@ -69,9 +59,6 @@ if [ -z "$1" ]; then
 	test ex03
 	test ex04
 	test ex05
-	test ex06
-	test ex07
-	test ex08
 else
 	n=$1
 	ex=$(printf "ex%02d" "$n")
