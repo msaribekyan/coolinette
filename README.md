@@ -44,9 +44,9 @@ ex08 Correct
 ```
 
 ## Updating
-During the piscine, several other projects will be added to Coolinette. To be up to date, navitage into the coolinette directory in your home directory and run:
+During the piscine, several other projects will be added to Coolinette. To be up to date, run the following command
 ```
-git pull
+coolinette update
 ```
 
 ## Contributions
