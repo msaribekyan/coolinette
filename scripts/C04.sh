@@ -43,7 +43,8 @@ test() {
 			;;
 	esac
 	$CC "${HOME}/coolinette/tests/C04/${ex}.c" "${dir_path}/${file}" -o "${temp_dir}/prog.bin"
-	"${temp_dir}/prog.bin"
+	echo -e >> "${temp_dir}/output"
+	"${temp_dir}/prog.bin" "${temp_dir}/output"
 	if [ "$?" == "0" ]; then
 		echo -e "${YELLOW}${ex}${NC} ${GREEN}Correct${NC}"
 	else
@@ -54,10 +55,10 @@ test() {
 
 if [ -z "$1" ]; then
 	test ex00
-#	test ex01
-#	test ex02
+	test ex01
+	test ex02
 	test ex03
-#	test ex04
+	test ex04
 	test ex05
 else
 	n=$1
