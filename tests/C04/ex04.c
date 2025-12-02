@@ -30,12 +30,6 @@ int main(int argc, char **argv)
 		return (1);
 	t_test tests[] = {
 		{
-			.desc = "ft_putnbr_base(-2147483648, \"0123456789ABCDEF\")",
-			.nb = -2147483648,
-			.base = "0123456789ABCDEF",
-			.expected = "-80000000",
-		},
-		{
 			.desc = "ft_putnbr_base(1234, \"0123456789abcdef\")",
 			.nb = 1234,
 			.base = "0123456789abcdef",
@@ -58,6 +52,12 @@ int main(int argc, char **argv)
 			.nb = 632906,
 			.base = "!z#%v0M2.xE",
 			.expected = "%E#0ME",
+		},
+		{
+			.desc = "ft_putnbr_base(-2147483648, \"0123456789ABCDEF\")",
+			.nb = -2147483648,
+			.base = "0123456789ABCDEF",
+			.expected = "-80000000",
 		},
 	};
 	count = sizeof(tests) / sizeof(t_test);
