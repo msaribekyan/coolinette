@@ -49,6 +49,11 @@ int main()
 			.expected = 0
 		},
 		{
+			.desc = "ft_atoi(\"--12352\")",
+			.str = "--12352",
+			.expected = 12352
+		},
+		{
 			.desc = "ft_atoi(\"-0\")",
 			.str = "-0",
 			.expected = 0
