@@ -1,3 +1,4 @@
 #!/bin/bash
-echo -e "alias coolinette='/home/mher/coolinette/coolinette'" >> ${HOME}/.zshrc
+echo -e "alias coolinette='${HOME}/coolinette/coolinette'" >> ${HOME}/.zshrc
 source ${HOME}/.zshrc
+i
