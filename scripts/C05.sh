@@ -53,8 +53,8 @@ test() {
 	esac
 	$CC "${HOME}/coolinette/tests/C05/${ex}.c" "${dir_path}/${file}" -o "${temp_dir}/prog.bin"
 	echo -e > "${temp_dir}/output"
-	sort "${temp_dir}/output" | tee "${temp_dir}/output" > "/dev/null"
 	if [ "${ex}" = "ex08" ]; then
+		sort "${temp_dir}/output" | tee "${temp_dir}/output" > "/dev/null"
 		"${temp_dir}/prog.bin" > "${temp_dir}/output"
 		if cmp -s "${temp_dir}/output" "${HOME}/coolinette/tests/C05/ex08-out"; then
 			echo -e "${YELLOW}${ex}${NC} ${GREEN}Correct${NC}"

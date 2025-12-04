@@ -36,6 +36,9 @@ if [ -z "$1" ]; then
 		*"C05"* | *"c05"* | *"C 05"* | *"c 05"*)
 			proj="C05"	
 			;;
+		*"C06"* | *"c06"* | *"C 06"* | *"c 06"*)
+			proj="C06"	
+			;;
 		*)
 			echo -e "${RED}Cannot detect project:${NC} Exiting..."
 			exit 1
