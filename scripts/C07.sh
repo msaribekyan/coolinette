@@ -32,7 +32,8 @@ test() {
 			file="ft_strjoin.c"
 			;;
 		"ex04")
-			file="ft_convert_base.c, ft_convert_base2.c"
+			file1="ft_convert_base.c"
+			file2="ft_convert_base2.c"
 			;;
 		"ex05")
 			file="ft_split.c"
@@ -42,7 +43,11 @@ test() {
 			exit 1
 			;;
 	esac
-	$CC "${HOME}/coolinette/tests/C07/${ex}.c" "${dir_path}/${file}" -o "${temp_dir}/prog.bin"
+	if [ "$ex" == "ex04" ]; then
+		$CC "${HOME}/coolinette/tests/C07/${ex}.c" "${dir_path}/${file1}" "${dir_path}/${file2}" -o "${temp_dir}/prog.bin"
+	else
+		$CC "${HOME}/coolinette/tests/C07/${ex}.c" "${dir_path}/${file}" -o "${temp_dir}/prog.bin"
+	fi
 	"${temp_dir}/prog.bin"
 	if [ "$?" == "0" ]; then
 		echo -e "${YELLOW}${ex}${NC} ${GREEN}Correct${NC}"
