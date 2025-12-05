@@ -52,7 +52,10 @@ else
 		echo -e "${CYAN}Updating Coolinette${NC}..."
 		cd ${HOME}/coolinette/
 		git pull
-		exit 1
+		exit 0
+	fi
+	if [ "$1" == "-v" ]; then
+		exit 0
 	fi
 	proj=$1
 fi
