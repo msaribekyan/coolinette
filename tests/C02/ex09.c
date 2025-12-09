@@ -38,6 +38,11 @@ int main()
 			.input = "snake_case_text\tit_just_works",
 			.expected = "Snake_Case_Text\tIt_Just_Works"
 		},
+		{
+			.desc = "ft_strcapitalize(\"snake_case_text~it_just_works\")",
+			.input = "snake_case_text~it_just_works",
+			.expected = "Snake_Case_Text~It_Just_Works"
+		},
 	};
 	count = sizeof(tests) / sizeof(t_test);
 	i = 0;
