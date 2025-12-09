@@ -49,6 +49,15 @@ test() {
 		"ex09")
 			file="ft_strcapitalize.c"
 			;;
+		"ex10")
+			file="ft_strlcpy.c"
+			;;
+		"ex01")
+			file="ft_putstr_non_printable.c"
+			;;
+		"ex11")
+			file="ft_print_memory.c"
+			;;
 		*)
 			echo -e "${RED}Invalid exercise${NC}: Exiting..."
 			exit 1
@@ -75,6 +84,9 @@ if [ -z "$1" ]; then
 	test ex07
 	test ex08
 	test ex09
+	test ex10
+#	test ex11
+#	test ex12
 else
 	n=$1
 	ex=$(printf "ex%02d" "$n")
