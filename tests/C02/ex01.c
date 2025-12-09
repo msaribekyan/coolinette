@@ -60,6 +60,13 @@ int main()
 			.n = 5,
 			.expected = ""
 		},
+		{
+			.desc = "ft_strncpy(dest[20], \"Hello World!\", 0)",
+			.dest = "hello",
+			.input = "Hello World!",
+			.n = 0,
+			.expected = "hello"
+		},
 	};
 	count = sizeof(tests) / sizeof(t_test);
 	i = 0;
