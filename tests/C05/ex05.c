@@ -29,7 +29,7 @@ int main()
 			.expected = 0,
 		},
 		{
-			.desc = "ft_sqrt0()",
+			.desc = "ft_sqrt(0)",
 			.nb = 0,
 			.expected = 0,
 		},
@@ -42,6 +42,11 @@ int main()
 			.desc = "ft_sqrt(2)",
 			.nb = 2,
 			.expected = 0,
+		},
+		{
+			.desc = "ft_sqrt(4)",
+			.nb = 4,
+			.expected = 2,
 		},
 		{
 			.desc = "ft_sqrt(15)",
