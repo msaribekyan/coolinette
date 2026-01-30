@@ -42,6 +42,10 @@ if [ -z "$1" ]; then
 		*"C07"* | *"c07"* | *"C 07"* | *"c 07"*)
 			proj="C07"	
 			;;
+		*"libft"* | *"Libft"*)
+			proj="libft"	
+			;;
+
 		*)
 			echo -e "${RED}Cannot detect project:${NC} Exiting..."
 			exit 1
