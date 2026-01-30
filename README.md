@@ -1,8 +1,8 @@
 # Coolinette
 
-## 42 Piscine code evaluator, which is cooler than Moulinette
+## 42 Piscine (and not only) code evaluator, which is cooler than Moulinette
 
-Supported project: C00, C01, C02, C03, C04, C05, C06 and C07.
+Supported project: C00, C01, C02, C03, C04, C05, C06, C07 and libft (partial support).
 
 ## Setup
 Clone the github repository to your home directory with the name "coolinette".
@@ -49,7 +49,7 @@ ex08 Correct
 ```
 
 ## Updating
-During the piscine, several other projects will be added to Coolinette. To be up to date, run the following command
+Several other projects will be added to Coolinette. To be up to date, run the following command
 ```
 coolinette update
 ```
