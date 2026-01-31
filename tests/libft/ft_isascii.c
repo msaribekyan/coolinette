@@ -23,57 +23,57 @@ int main()
 
 	t_test tests[] = {
 		{
-			.desc = "ft_isalnum(\'0\')",
+			.desc = "ft_isascii(\'0\')",
 			.c = '0',
 			.expected = 1,
 		},
 		{
-			.desc = "ft_isalnum(\'9\')",
+			.desc = "ft_isascii(\'9\')",
 			.c = '9',
 			.expected = 1,
 		},
 		{
-			.desc = "ft_isalnum(\'\\0\')",
+			.desc = "ft_isascii(\'\\0\')",
 			.c = '\0',
-			.expected = 0,
+			.expected = 1,
 		},
 		{
-			.desc = "ft_isalnum(\' \')",
+			.desc = "ft_isascii(\' \')",
 			.c = ' ',
-			.expected = 0,
+			.expected = 1,
 		},
 		{
-			.desc = "ft_isalnum(\'\\n\')",
+			.desc = "ft_isascii(\'\\n\')",
 			.c = '\n',
-			.expected = 0,
+			.expected = 1,
 		},
 		{
-			.desc = "ft_isalnum(\'a\')",
+			.desc = "ft_isascii(\'a\')",
 			.c = 'a',
 			.expected = 1,
 		},
 		{
-			.desc = "ft_isalnum(\'z\')",
+			.desc = "ft_isascii(\'z\')",
 			.c = 'z',
 			.expected = 1,
 		},
 		{
-			.desc = "ft_isalnum(\'A\')",
+			.desc = "ft_isascii(\'A\')",
 			.c = 'A',
 			.expected = 1,
 		},
 		{
-			.desc = "ft_isalnum(\'Z\')",
+			.desc = "ft_isascii(\'Z\')",
 			.c = 'Z',
 			.expected = 1,
 		},
 		{
-			.desc = "ft_isalnum(\'\\x7F\')",
+			.desc = "ft_isascii(\'\\x7F\')",
 			.c = '\x7F',
-			.expected = 0,
+			.expected = 1,
 		},
 		{
-			.desc = "ft_isalnum(\'\\x85\')",
+			.desc = "ft_isascii(\'\\x85\')",
 			.c = '\x85',
 			.expected = 0,
 		},
@@ -82,7 +82,7 @@ int main()
 	i = 0;
 	while (i < count)
 	{
-		int output = ft_isalnum(tests[i].c);
+		int output = ft_isascii(tests[i].c);
 		if (output != tests[i].expected)
 		{
 			printf(RED "TEST FAILED" DEFAULT " %s\n", tests[i].desc);

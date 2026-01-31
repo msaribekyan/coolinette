@@ -13,7 +13,7 @@ typedef struct	s_test
 {
 	char	*desc;
 	char	c;
-	int	expected;
+	char	expected;
 }	t_test;
 
 int main()
@@ -23,66 +23,66 @@ int main()
 
 	t_test tests[] = {
 		{
-			.desc = "ft_isalnum(\'0\')",
+			.desc = "ft_tolower(\'0\')",
 			.c = '0',
-			.expected = 1,
+			.expected = '0',
 		},
 		{
-			.desc = "ft_isalnum(\'9\')",
+			.desc = "ft_tolower(\'9\')",
 			.c = '9',
-			.expected = 1,
+			.expected = '9',
 		},
 		{
-			.desc = "ft_isalnum(\'\\0\')",
+			.desc = "ft_tolower(\'\\0\')",
 			.c = '\0',
-			.expected = 0,
+			.expected = '\0',
 		},
 		{
-			.desc = "ft_isalnum(\' \')",
+			.desc = "ft_tolower(\' \')",
 			.c = ' ',
-			.expected = 0,
+			.expected = ' ',
 		},
 		{
-			.desc = "ft_isalnum(\'\\n\')",
+			.desc = "ft_tolower(\'\\n\')",
 			.c = '\n',
-			.expected = 0,
+			.expected = '\n',
 		},
 		{
-			.desc = "ft_isalnum(\'a\')",
+			.desc = "ft_tolower(\'a\')",
 			.c = 'a',
-			.expected = 1,
+			.expected = 'a',
 		},
 		{
-			.desc = "ft_isalnum(\'z\')",
+			.desc = "ft_tolower(\'z\')",
 			.c = 'z',
-			.expected = 1,
+			.expected = 'z',
 		},
 		{
-			.desc = "ft_isalnum(\'A\')",
+			.desc = "ft_tolower(\'A\')",
 			.c = 'A',
-			.expected = 1,
+			.expected = 'a',
 		},
 		{
-			.desc = "ft_isalnum(\'Z\')",
+			.desc = "ft_tolower(\'Z\')",
 			.c = 'Z',
-			.expected = 1,
+			.expected = 'z',
 		},
 		{
-			.desc = "ft_isalnum(\'\\x7F\')",
+			.desc = "ft_tolower(\'\\x7F\')",
 			.c = '\x7F',
-			.expected = 0,
+			.expected = '\x7F',
 		},
 		{
-			.desc = "ft_isalnum(\'\\x85\')",
+			.desc = "ft_tolower(\'\\x85\')",
 			.c = '\x85',
-			.expected = 0,
+			.expected = '\x85',
 		},
 	};
 	count = sizeof(tests) / sizeof(t_test);
 	i = 0;
 	while (i < count)
 	{
-		int output = ft_isalnum(tests[i].c);
+		char output = ft_tolower(tests[i].c);
 		if (output != tests[i].expected)
 		{
 			printf(RED "TEST FAILED" DEFAULT " %s\n", tests[i].desc);

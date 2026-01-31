@@ -33,12 +33,17 @@ int main()
 			.expected = 0,
 		},
 		{
-			.desc = "ft_isalpha(\''\0\')",
+			.desc = "ft_isalpha(\'\\0\')",
 			.c = '\0',
 			.expected = 0,
 		},
 		{
-			.desc = "ft_isalpha(\''\n\')",
+			.desc = "ft_isalpha(\' \')",
+			.c = ' ',
+			.expected = 0,
+		},
+		{
+			.desc = "ft_isalpha(\'\\n\')",
 			.c = '\n',
 			.expected = 0,
 		},

@@ -7,8 +7,7 @@
 #define YELLOW "\033[1;33m"
 #define DEFAULT "\033[0m"
 
-
-int	ft_strncmp(char *dest, char *src, unsigned int n);
+#include "libft.h"
 
 typedef struct	s_test
 {

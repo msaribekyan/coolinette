@@ -33,12 +33,17 @@ int main()
 			.expected = 1,
 		},
 		{
-			.desc = "ft_isdigit(\''\0\')",
+			.desc = "ft_isdigit(\'\\0\')",
 			.c = '\0',
 			.expected = 0,
 		},
 		{
-			.desc = "ft_isdigit(\''\n\')",
+			.desc = "ft_isdigit(\' \')",
+			.c = ' ',
+			.expected = 0,
+		},
+		{
+			.desc = "ft_isdigit(\'\\n\')",
 			.c = '\n',
 			.expected = 0,
 		},

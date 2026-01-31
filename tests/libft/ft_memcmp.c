@@ -7,8 +7,7 @@
 #define YELLOW "\033[1;33m"
 #define DEFAULT "\033[0m"
 
-
-int	ft_strncmp(char *dest, char *src, unsigned int n);
+#include "libft.h"
 
 typedef struct	s_test
 {
@@ -26,42 +25,42 @@ int main()
 
 	t_test tests[] = {
 		{
-			.desc = "ft_strncmp(\"Hello World!\", \"Hello\", 20)",
+			.desc = "ft_memcmp(\"Hello World!\", \"Hello\", 12)",
 			.s1 = "Hello World!",
 			.s2 = "Hello",
-			.n = 20,
+			.n = 12,
 			.expected = 32
 		},
 		{
-			.desc = "ft_strncmp(\"Hello\", \"Hello World!\", 5)",
+			.desc = "ft_memcmp(\"Hello\", \"Hello World!\", 5)",
 			.s1 = "Hello",
 			.s2 = "Hello World!",
 			.n = 5,
 			.expected = 0
 		},
 		{
-			.desc = "ft_strncmp(\"\", \"\", 1)",
+			.desc = "ft_memcmp(\"\", \"\", 1)",
 			.s1 = "",
 			.s2 = "",
 			.n = 1,
 			.expected = 0
 		},
 		{
-			.desc = "ft_strncmp(\"\", \"Hello World!\", 20)",
+			.desc = "ft_memcmp(\"\", \"Hello World!\", 20)",
 			.s1 = "",
 			.s2 = "Hello World!",
 			.n = 20,
 			.expected = -72
 		},
 		{
-			.desc = "ft_strncmp(\"Hello World!\", \"\", 20)",
+			.desc = "ft_memcmp(\"Hello World!\", \"\", 20)",
 			.s1 = "Hello World!",
 			.s2 = "",
 			.n = 20,
 			.expected = 72
 		},
 		{
-			.desc = "ft_strncmp(\"Hello\", \"World\", 0)",
+			.desc = "ft_memcmp(\"Hello World!\", \"\", 0)",
 			.s1 = "Hello",
 			.s2 = "World",
 			.expected = 0
@@ -71,7 +70,7 @@ int main()
 	i = 0;
 	while (i < count)
 	{
-		int output = ft_strncmp(tests[i].s1, tests[i].s2, tests[i].n);
+		int output = ft_memcmp((void *) tests[i].s1, (void *) tests[i].s2, tests[i].n);
 		if (output != tests[i].expected)
 		{
 			printf(RED "TEST FAILED" DEFAULT " %s\n", tests[i].desc);
